@@ -1,10 +1,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: {
-    enabled: true,
-    content: ["./src/**/*.html", "./src/**/*.js"],
-  },
+  purge: { content: ["./public/**/*.html", "./src/**/*.vue"] },
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -29,18 +26,6 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
-
-      lunur: {
-        100: "#eaeff4",
-        200: "#d5dee9",
-        300: "#c0cede",
-        400: "#abbdd3",
-        500: "#96adc8",
-        600: "#788aa0",
-        700: "#5a6878",
-        800: "#3c4550",
-        900: "#1e2328",
-      },
     },
     spacing: {
       px: "1px",
@@ -78,7 +63,6 @@ module.exports = {
       72: "18rem",
       80: "20rem",
       96: "24rem",
-      moon: "640px",
     },
     animation: {
       none: "none",
@@ -131,6 +115,7 @@ module.exports = {
     },
     blur: {
       0: "0",
+      none: "0",
       sm: "4px",
       DEFAULT: "8px",
       md: "12px",
@@ -186,6 +171,7 @@ module.exports = {
       inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
       none: "none",
     },
+    caretColor: (theme) => theme("colors"),
     contrast: {
       0: "0",
       50: ".5",
@@ -196,6 +182,9 @@ module.exports = {
       200: "2",
     },
     container: {},
+    content: {
+      none: "none",
+    },
     cursor: {
       auto: "auto",
       default: "default",
@@ -259,7 +248,6 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        "Prompt",
         "ui-sans-serif",
         "system-ui",
         "-apple-system",
@@ -823,7 +811,6 @@ module.exports = {
     }),
     zIndex: {
       auto: "auto",
-      "-1": "-1",
       0: "0",
       10: "10",
       20: "20",
@@ -839,6 +826,8 @@ module.exports = {
     "even",
     "visited",
     "checked",
+    "empty",
+    "read-only",
     "group-hover",
     "group-focus",
     "focus-within",
@@ -888,6 +877,7 @@ module.exports = {
     backgroundPosition: ["responsive"],
     backgroundRepeat: ["responsive"],
     backgroundSize: ["responsive"],
+    backgroundOrigin: ["responsive"],
     blur: ["responsive"],
     borderCollapse: ["responsive"],
     borderColor: [
